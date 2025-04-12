@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to top right, #7ccc87, #df80af);
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .logo-container img {
+            width: 150px;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .btn {
+            background: #7ccc87;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #6ab575;
+        }
+        .register-link {
+            margin-top: 15px;
+        }
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+                max-width: 900px;
+            }
+            .logo-container {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #f8f8f8;
+                padding: 20px;
+            }
+            .login-container {
+                flex: 1;
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Likhang CHAS Logo">
+        </div>
+        <div class="login-container">
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="loginUser" placeholder="Username" class="inpfield" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="loginPass" placeholder="Password" class="inpfield" required>
+                </div>
+                <button type="submit" id="submit" class="btn">Login</button>
+            </form>            
+            <div class="register-link">
+                Don't have an account? <a href="create.html">Create Account</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const DataURL = "https://script.google.com/macros/s/AKfycbwO9C5odN1pwvADIK6N5fiXAU7Z6qKizCGYPgWE8msG74VqNaeLzfTuNHihhYIQTDLN/exec";
+
+function login(event) {
+    event.preventDefault(); // Prevent page reload
+
+    let username = document.getElementById('loginUser').value.trim();
+    let password = document.getElementById('loginPass').value.trim();
+
+    if (!username || !password) {
+        alert("⚠️ Please enter both username and password.");
+        return;
+    }
+
+    fetch(DataURL)
+        .then(response => response.json())
+        .then(data => {
+            let user = data.find(user => user.username.toLowerCase() === username.toLowerCase());
+
+            if (user) {
+                if (user.password === password) {
+                    alert("✅ Login successful!");
+                    window.location.href = "home.html"; // Redirect to home.html after successful login
+                } else {
+                    alert("❌ Incorrect password!");
+                }
+            } else {
+                alert("❌ Username not found!");
+            }
+        })
+        .catch(error => alert("⚠️ Error fetching data: " + error));
+}
+
+function register() {
+    let username = document.getElementById('regUser').value;
+    let password = document.getElementById('regPass').value;
+    let confirmPassword = document.getElementById('regConfirmPass').value;
+    
+    if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+    }
+    alert('Registered successfully as: ' + username);
+}
+
+document.getElementById("submit").addEventListener("click", login);
+
+document.querySelectorAll("inpfield").forEach(button => {
+    button.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            login(event);
+        }
+    });
+});
+    </script>
+</body>
+</html>

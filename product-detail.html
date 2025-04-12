@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Likhang CHAS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+    <style>
+        /* General Enhancements */
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .col-4 {
+            transition: transform 0.3s ease-in-out;
+        }
+        .col-4:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul li a:hover {
+            color: #31772a;
+            transition: 0.3s;
+        }
+
+        .page-btn span {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .page-btn span:hover {
+            background: #31772a;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .single-product .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 0px 0px;
+        }
+        /* Ensure the whole page takes up at least the full height of the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* The main container will expand to push the footer down */
+.container {
+    flex: 1;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #31772a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" width="150px" alt="Likhang CHAS Logo"src="images/logo.png" width="150px" onclick="location.href='home.html'" style="cursor: pointer;">           
+             </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="#">About</a></li>
+                   <!--   <li><a href="#">Contact</a></li>
+                        <li><a href="#">Account</a></li>-->
+                </ul>
+            </nav>
+            <img src="images/cart.png" width="30px" height="30px" onclick="location.href='cart.html'" style="cursor: pointer;">
+        </div>
+    </div>
+
+    <!-- Single Product Details -->
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="images/gallery-1.jpg" width="100%" id="ProductImg" alt="Product Image">
+                <div class="small-img-row">
+                    <div class="small-img-col"><img src="images/gallery-1.jpg" width="100%" class="small-img" alt="Gallery Image 1"></div>
+                    <div class="small-img-col"><img src="images/gallery-2.jpg" width="100%" class="small-img" alt="Gallery Image 2"></div>
+                    <div class="small-img-col"><img src="images/gallery-3.jpg" width="100%" class="small-img" alt="Gallery Image 3"></div>
+                    <div class="small-img-col"><img src="images/gallery-4.jpg" width="100%" class="small-img" alt="Gallery Image 4"></div>
+                </div>
+            </div>
+            <div class="col-2">
+                <p>Home / Caps</p>
+                <h1>CHAS CAPS</h1>
+                <h4>₱150</h4>
+                
+                <input type="number" id="quantity" value="1">
+                <a href="#" class="btn" onclick="addToCart(1, 'CHAS SHIRT', 470)">Add To Cart</a>
+                <h3>Product Details</h3>
+                <p>This stylish baseball cap features a bold "FUTURE RN" design in vibrant pink lettering, making it the perfect accessory for aspiring nurses. Made from durable, breathable fabric, it offers a comfortable fit for everyday wear. Ideal for nursing students or as a thoughtful gift for future registered nurses.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Products Section -->
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>Related Products</h2>
+            <a href="#" class="btn">View More</a>
+        </div>
+        <div class="row">
+            <div class="col-4" onclick="location.href='product-detail-Caps.html'" style="cursor: pointer;">
+                <img src="images/product-1.png">
+                <h4>CHAS Caps</h4>
+                <p>₱150</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Pins.html'" style="cursor: pointer;">
+                <img src="images/product-2.png">
+                <h4>CHAS Pins</h4>
+                <p>₱50</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Shirt.html'" style="cursor: pointer;">
+                <img src="images/product-3.png">
+                <h4>CHAS Department Shirt</h4>
+                <p>₱470</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Totebagshtml'" style="cursor: pointer;">
+                <img src="images/product-4.png">
+                <h4>CHAS Tote Bags</h4>
+                <p>₱350</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+
+    <!-- JavaScript for Product Gallery -->
+    <script>
+        var ProductImg = document.getElementById("ProductImg");
+        var SmallImg = document.getElementsByClassName("small-img");
+
+        for (let i = 0; i < SmallImg.length; i++) {
+            SmallImg[i].onclick = function () {
+                ProductImg.src = SmallImg[i].src;
+            };
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+    // Handle small image clicks to update the main product image
+    var ProductImg = document.getElementById("ProductImg");
+    var SmallImg = document.getElementsByClassName("small-img");
+
+    for (let i = 0; i < SmallImg.length; i++) {
+        SmallImg[i].addEventListener("click", function () {
+            ProductImg.src = this.src;
+        });
+    }
+
+    // Add to Cart Button Functionality
+    const addToCartBtn = document.querySelector(".btn");
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default link behavior
+
+            // Get product details (excluding image)
+            let productName = document.querySelector("h1").innerText;
+            let productPrice = parseFloat(document.querySelector("h4").innerText.replace("₱", ""));
+            let productQuantity = parseInt(document.querySelector("input[type='number']").value);
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Check if item already exists in the cart
+            let existingItem = cart.find(item => item.name === productName);
+            if (existingItem) {
+                existingItem.quantity += productQuantity;
+            } else {
+                cart.push({ name: productName, price: productPrice, quantity: productQuantity });
+            }
+
+            // Save updated cart to localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            // Redirect to cart page
+            window.location.href = "cart.html";
+        });
+    }
+});
+    </script>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p>Our Purpose Is To Creatively Craft and Deliver Exclusive CHAS Merchandise That Embodies Pride, Quality, and Tradition.</p>
+        </div>
+    </div>
+</body>
+</html>

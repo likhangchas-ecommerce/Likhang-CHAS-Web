@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Likhang CHAS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+    <style>
+        /* General Enhancements */
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .col-4 {
+            transition: transform 0.3s ease-in-out;
+        }
+        .col-4:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul li a:hover {
+            color: #31772a;
+            transition: 0.3s;
+        }
+
+        .page-btn span {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .page-btn span:hover {
+            background: #31772a;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .single-product .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 0px 0px;
+        }
+        .policies-section {
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 40px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .policies-section h2 {
+        text-align: center;
+        color: #31772a;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .policy {
+        margin-bottom: 15px;
+    }
+
+    .policy h3 {
+        background: #31772a;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .policy h3:hover {
+        background: #255b1d;
+    }
+
+    .policy-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        background: white;
+        border-left: 4px solid #31772a;
+        padding: 0 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+    }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" width="150px" alt="Likhang CHAS Logo"src="images/logo.png" width="150px" onclick="location.href='home.html'" style="cursor: pointer;">  
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                <!--   <li><a href="#">Contact</a></li>
+                        <li><a href="#">Account</a></li>-->
+                </ul>
+            </nav>
+            <img src="images/cart.png" width="30px" height="30px" onclick="location.href='cart.html'" style="cursor: pointer;">
+        </div>
+    </div>
+
+    <!-- Single Product Details -->
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="images/product-cap-white-rn.jpg" width="100%" id="ProductImg" alt="Product Image">
+                <div class="small-img-row">
+                    <div class="small-img-col"><img src="images/product-cap-white-rn.jpg" width="100%" class="small-img" alt="Gallery Image 1"></div>
+                    <div class="small-img-col"><img src="images/product-cap-white-rn.jpg" width="100%" class="small-img" alt="Gallery Image 2"></div>
+                    <div class="small-img-col"><img src="images/product-cap-white-rn.jpg" width="100%" class="small-img" alt="Gallery Image 3"></div>
+                    <div class="small-img-col"><img src="images/product-cap-white-rn.jpg" width="100%" class="small-img" alt="Gallery Image 4"></div>
+                </div>
+            </div>
+            <div class="col-2">
+                <p>Home / Caps</p>
+                <h1>CHAS White Cap RN</h1>
+                <h4>₱160</h4>
+                
+                <input type="number" id="quantity" value="1" min="1" max="10">
+                <a href="#" class="btn" onclick="addToCart(1, 'CHAS Black Cap Swilr', 150)">Add To Cart</a>
+
+                <h3>Product Details</h3>
+                <p>Featuring clean embroidered lettering and available in 4 timeless colors, this cap is perfect for everyday wear or as a gift for your fellow RNs</p>
+            </div>
+            <div class="small-container policies-section">
+                <h2>Policies & Information</h2>
+                
+                <div class="policy">
+                    <h3 onclick="togglePolicy('returnPolicy')">📦 Return & Exchange Policy ⬇</h3>
+                    <div id="returnPolicy" class="policy-content">
+                        <p>If you're not satisfied with your purchase, you may return or exchange it within 7 days of receiving it. 
+                        The item must be in its original condition with tags attached. Shipping costs for returns are the responsibility of the buyer.</p>
+                    </div>
+                </div>
+            
+                <div class="policy">
+                    <h3 onclick="togglePolicy('warrantyPolicy')">🛠️ Warranty Information ⬇</h3>
+                    <div id="warrantyPolicy" class="policy-content">
+                        <p>Our products come with a 30-day warranty against manufacturing defects. If you experience any issues, 
+                        please contact our support team with proof of purchase.</p>
+                    </div>
+                </div>
+            
+                <div class="policy">
+                    <h3 onclick="togglePolicy('shippingPolicy')">🚚 Shipping & Delivery ⬇</h3>
+                    <div id="shippingPolicy" class="policy-content">
+                        <p>We ship nationwide! Orders are processed within 2-3 business days and delivered within 5-7 days. 
+                        Expedited shipping is available for an additional fee.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Products Section -->
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>Related Products</h2>
+            <a href="#" class="btn">View More</a>
+        </div>
+        <div class="row">
+            <div class="col-4" onclick="location.href='product-detail-Caps-black-rn.html'" style="cursor: pointer;">
+                <img src="images/product-cap-black-rn.jpg">
+                <h4>CHAS Black RN Cap</h4>
+                <p>₱160</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Caps-black-student-nurse.html'" style="cursor: pointer;">
+                <img src="images/product-cap-black-student-nurse.jpg">
+                <h4>CHAS Black Student Nurse Cap</h4>
+                <p>₱160</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Caps-black-swirl.html'" style="cursor: pointer;">
+                <img src="images/product-cap-black-swirl.jpg">
+                <h4>CHAS Black RN Swirl Cap</h4>
+                <p>₱160</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Caps-green-student-nurse.html'" style="cursor: pointer;">
+                <img src="images/product-cap-green-student-nurse.jpg">
+                <h4>CHAS Green Student Nurse Cap</h4>
+                <p>₱160</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+
+        </div>
+
+    <!-- JavaScript for Product Gallery -->
+    <script>
+
+const quantityInput = document.getElementById('quantity');
+  
+  quantityInput.addEventListener('input', function () {
+    if (this.value > 10) {
+      this.value = 10;
+    } else if (this.value < 1) {
+      this.value = 1;
+    }
+  });
+
+function togglePolicy(policyId) {
+        var content = document.getElementById(policyId);
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null; // Collapse
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px"; // Expand
+        }
+    }
+
+        var ProductImg = document.getElementById("ProductImg");
+        var SmallImg = document.getElementsByClassName("small-img");
+
+        for (let i = 0; i < SmallImg.length; i++) {
+            SmallImg[i].onclick = function () {
+                ProductImg.src = SmallImg[i].src;
+            };
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+    updateTotalPrice(); // Ensure total price updates on page load
+    loadCartItems(); // Load cart items in table
+});
+
+/** 
+ * Function to update total price across pages (Cart & Checkout) 
+ */
+function updateTotalPrice() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let totalPrice = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+    // Update total price in checkout page
+    let totalPriceElement = document.getElementById("total-price");
+    if (totalPriceElement) {
+        totalPriceElement.innerText = `₱${totalPrice.toFixed(2)}`;
+    }
+}
+
+/** 
+ * Function to load cart items into the cart table
+ */
+function loadCartItems() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cartTable = document.querySelector("table");
+    let totalPriceElement = document.getElementById("total-price");
+
+    if (!cartTable) return; // Prevent error if there's no cart table
+
+    if (cart.length === 0) {
+        cartTable.innerHTML = "<tr><td colspan='5'>Your cart is empty.</td></tr>";
+        if (totalPriceElement) totalPriceElement.innerText = "₱0";
+        return;
+    }
+
+    let totalPrice = 0;
+    let cartHTML = `
+        <tr>
+            <th>Product</th>
+            <th>Size</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Action</th>
+        </tr>`;
+
+    cart.forEach((item, index) => {
+        let subtotal = item.price * item.quantity;
+        totalPrice += subtotal;
+
+        cartHTML += `
+        <tr>
+            <td>${item.name}</td>
+            <td>${item.size || "N/A"}</td>
+            <td><input type="number" value="${item.quantity}" min="1" data-index="${index}" class="cart-quantity"></td>
+            <td>₱${subtotal.toFixed(2)}</td>
+            <td><button class="remove-item" data-index="${index}">Remove</button></td>
+        </tr>`;
+    });
+
+    cartTable.innerHTML = cartHTML;
+    if (totalPriceElement) totalPriceElement.innerText = `₱${totalPrice.toFixed(2)}`;
+
+    // Attach event listeners for quantity updates and removal
+    document.querySelectorAll(".cart-quantity").forEach(input => {
+        input.addEventListener("change", function () {
+            let index = this.getAttribute("data-index");
+            let newQuantity = parseInt(this.value);
+
+            if (newQuantity <= 0) {
+                newQuantity = 1;
+                this.value = 1;
+            }
+
+            cart[index].quantity = newQuantity;
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateTotalPrice(); // Update total price
+            loadCartItems(); // Reload cart
+        });
+    });
+
+    document.querySelectorAll(".remove-item").forEach(button => {
+        button.addEventListener("click", function () {
+            let index = this.getAttribute("data-index");
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateTotalPrice();
+            loadCartItems();
+        });
+    });
+}
+
+/** 
+ * Add to Cart Function (Product Page) 
+ */
+const addToCartBtn = document.querySelector(".btn");
+if (addToCartBtn) {
+    addToCartBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        let productName = document.querySelector("h1").innerText;
+        let productPrice = parseFloat(document.querySelector("h4").innerText.replace("₱", ""));
+        let productQuantity = parseInt(document.querySelector("input[type='number']").value);
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        let existingItem = cart.find(item => item.name === productName);
+        if (existingItem) {
+            existingItem.quantity += productQuantity;
+        } else {
+            cart.push({ name: productName, price: productPrice, quantity: productQuantity });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateTotalPrice();
+        alert("Item added to cart!");
+    });
+}
+
+/** 
+ * Checkout Function
+ */
+ function sendToGoogleSheet() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    fetch("https://script.google.com/macros/s/AKfycbwQYodENynxMa87h7Cfjp2nqhhuAzc4wbqNexkRt5OLNJ9VWB_kbQmjpdlPdpH14Iqw/exec", {  
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(cart) 
+    })
+    .then(response => response.text())  // ✅ Fix: Read text response first
+    .then(text => {
+        try {
+            return JSON.parse(text);  // ✅ Fix: Parse JSON safely
+        } catch (error) {
+            throw new Error("Invalid JSON: " + text); // Debugging
+        }
+    })
+    .then(data => {
+        console.log("Google Sheets Response:", data);
+        if (data.status === "success") {
+            alert("Order successfully added!");
+            localStorage.removeItem("cart");  
+          
+        } else {
+            alert("Error: " + data.message);
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Error sending order to Google Sheets.");
+    });
+}
+    </script>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p>Our Purpose Is To Creatively Craft and Deliver Exclusive CHAS Merchandise That Embodies Pride, Quality, and Tradition.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likhang CHAS | Ecommerce Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+    <style>
+        .slider-container {
+            position: relative;
+            max-width: 100%;
+            text-align: center;
+        }
+        .slider-container img {
+            width: 100%;
+            max-width: 500px;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .slider-btn.left {
+            left: 10px;
+        }
+        .slider-btn.right {
+            right: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" width="150px" onclick="location.href='home.html'" style="cursor: pointer;">
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="home.html">Home </a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                      <!--   <li><a href="#">Contact</a></li>
+                        <li><a href="#">Account</a></li>-->
+                    </ul>
+                </nav>
+                <img src="images/cart.png" width="30px" height="30px" onclick="location.href='cart.html'" style="cursor: pointer;">
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    <h1>LikhangCHAS: Where Passion Meets Profit.</h1>
+                    <p>A digital marketplace designed for student nurses with an entrepreneurial spirit!</p>
+                    <a href="#" class="btn">Explore Now →</a>
+                </div>
+                <div class="col-2 slider-container">
+                    <button class="slider-btn left" onclick="prevImage()">❮</button>
+                    <img id="slider-image" src="images/image-1.png">
+                    <button class="slider-btn right" onclick="nextImage()">❯</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider pics 
+    images/slider-1.png
+     images/slider-2.png
+      images/slider-3.png
+       images/slider-4.png
+        images/slider-5.png
+-->
+    <!-- Featured Categories -->
+    <div class="categories">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3"><img src="images/category-1.jpg"></div>
+                <div class="col-3"><img src="images/category-2.jpg"></div>
+                <div class="col-3"><img src="images/category-3.jpg"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Products -->
+    <div class="small-container">
+        <h2 class="title">Featured Products</h2>
+        <div class="row">
+            <div class="col-4" onclick="location.href='product-detail-Caps-black-rn.html'" style="cursor: pointer;">
+                <img src="images/product-cap-black-rn.jpg">
+                <h4>CHAS Black RN Cap</h4>
+                <p>₱160</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Caps-black-student-nurse.html'" style="cursor: pointer;">
+                <img src="images/product-cap-black-student-nurse.jpg">
+                <h4>CHAS Black Student Nurse Cap</h4>
+                <p>₱160</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Caps-black-swirl.html'" style="cursor: pointer;">
+                <img src="images/product-cap-black-swirl.jpg">
+                <h4>CHAS Black RN Swirl Cap</h4>
+                <p>₱160</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Caps-green-student-nurse.html'" style="cursor: pointer;">
+                <img src="images/product-cap-green-student-nurse.jpg">
+                <h4>CHAS Green Student Nurse Cap</h4>
+                <p>₱160</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+
+        </div>
+
+        <!-- Latest Products -->
+        <h2 class="title">Latest Products</h2>
+        <div class="row">
+            <div class="col-4" onclick="location.href='product-detail-Pins-purple-flower.html'" style="cursor: pointer;">
+                <img src="images/product-pin-purple-flower.jpg">
+                <h4>CHAS Purple Dangal Nurse Pin</h4>
+                <p>₱25</p>
+                
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Pins-green-student-nurse-club.html'" style="cursor: pointer;">
+                <img src="images/product-pin-green-student-nurse-club.jpg">
+                <h4>CHAS Green Student Nurse Club Pin</h4>
+                <p>₱25</p>
+                
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Pins-white-student-nurse.html'" style="cursor: pointer;">
+                <img src="images/product-pin-white-student nurse.jpg">
+                <h4>CHAS White Student Nurse Pin</h4>
+                <p>₱25</p>
+                
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Totebag-green-nursing-student.html'" style="cursor: pointer;">
+                <img src="images/product-tote-bag-green-nursing-student.jpg">
+                <h4>CHAS Green Nursing Student Totebag</h4>
+                <p>₱150</p>
+                
+            </div>
+        </div>
+
+    <!-- Exclusive Offer -->
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2"><img src="images/exclusive.png" class="offer-img"></div>
+                <div class="col-2">
+                    <p>Exclusively Available on LikhangCHAS</p>
+                    <h1>CHAS Lanyard</h1>
+                    <small>Show your CHAS pride with our exclusive CHAS lanyard!</small>
+                    <a href="#" class="btn">Buy Now →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonials Section -->
+    <div class="testimonials">
+        <h2>Customer Testimonials</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>"Amazing products! The quality is top-notch. Highly recommend!"</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="testimonial">
+                <p>"Fast shipping and great customer service. Will order again!"</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="testimonial">
+                <p>"Fast shipping and great customer service. Will order again!"</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Footer -->
+     <div class="footer">
+        <div class="container">
+            <p>Our Purpose Is To Creatively Craft and Deliver Exclusive CHAS Merchandise That Embodies Pride, Quality, and Tradition.</p>
+        </div>
+    </div>
+
+    <script>
+        let images = [
+            "images/slider-1.png", 
+            "images/slider-2.png", 
+            "images/slider-3.png", 
+            "images/slider-4.png", 
+            "images/slider-5.png"
+        ];
+        let index = 0;
+        let sliderImage = document.getElementById("slider-image");
+
+        function nextImage() {
+            index = (index + 1) % images.length;
+            sliderImage.style.opacity = 0;
+            setTimeout(() => {
+                sliderImage.src = images[index];
+                sliderImage.style.opacity = 1;
+            }, 300);
+        }
+
+        function prevImage() {
+            index = (index - 1 + images.length) % images.length;
+            sliderImage.style.opacity = 0;
+            setTimeout(() => {
+                sliderImage.src = images[index];
+                sliderImage.style.opacity = 1;
+            }, 300);
+        }
+        function sendToGoogleSheet() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    fetch("https://script.google.com/macros/s/AKfycbwQYodENynxMa87h7Cfjp2nqhhuAzc4wbqNexkRt5OLNJ9VWB_kbQmjpdlPdpH14Iqw/exec", {  
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(cart) 
+    })
+    .then(response => response.text())  // ✅ Fix: Read text response first
+    .then(text => {
+        try {
+            return JSON.parse(text);  // ✅ Fix: Parse JSON safely
+        } catch (error) {
+            throw new Error("Invalid JSON: " + text); // Debugging
+        }
+    })
+    .then(data => {
+        console.log("Google Sheets Response:", data);
+        if (data.status === "success") {
+            alert("Order successfully added!");
+            localStorage.removeItem("cart");  
+           
+        } else {
+            alert("Error: " + data.message);
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Error sending order to Google Sheets.");
+    });
+}
+        
+    </script>
+</body>
+</html>

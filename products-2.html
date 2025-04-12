@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Likhang CHAS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            scroll-behavior: smooth;
+        }
+
+        .col-4 {
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .col-4:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul li a:hover {
+            color: #31772a;
+            transition: 0.3s;
+        }
+
+        .page-btn span {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .page-btn span:hover {
+            background: #31772a;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .footer {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" width="150px" onclick="location.href='home.html'" style="cursor: pointer;">
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <!--   <li><a href="#">Contact</a></li>
+                        <li><a href="#">Account</a></li>-->
+                </ul>
+            </nav>
+            <img src="images/cart.png" width="30px" height="30px" onclick="location.href='cart.html'" style="cursor: pointer;">
+        </div>
+    </div>
+
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>All Products</h2>
+            <select>
+                <option>Default sorting</option>
+                <option>Sort by Price</option>
+                <option>Sort by popularity</option>
+                <option>Sort by rating</option>
+                <option>Sort by Sale</option>
+            </select>
+        </div>
+
+        <!-- First Row -->
+        <div class="row">
+            <div class="col-4" onclick="location.href='product-detail-Caps-pink-swirl.html'" style="cursor: pointer;">
+                <img src="images/product-cap-pink-swirl.jpg">
+                <h4>CHAS Pink RN Swirl Cap</h4>
+                <p>₱160</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Caps-white-student-nurse.html'" style="cursor: pointer;">
+                <img src="images/product-cap-white-student-nurse.jpg">
+                <h4>CHAS White Student Nurse Cap</h4>
+                <p>₱160</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Caps-white-rn.html'" style="cursor: pointer;">
+                <img src="images/product-cap-white-rn.jpg">
+                <h4>CHAS White RN Cap</h4>
+                <p>₱160</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Caps-white-swirl.html'" style="cursor: pointer;">
+                <img src="images/product-cap-white-swirl.jpg">
+                <h4>CHAS White RN Swirl Cap</h4>
+                <p₱160</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-4" onclick="location.href='product-detail-Pins-green-flower.html'" style="cursor: pointer;">
+                <img src="images/product-pin-green-flower.jpg">
+                <h4>CHAS Green Dangal Nurse Pin</h4>
+                <p>₱25</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Pins-green-nightingale.html'" style="cursor: pointer;">
+                <img src="images/product-pin-green-nightingale.jpg">
+                <h4>CHAS Green Nightingale Pin</h4>
+                <p>₱25</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Pins-green-nursing-student.html'" style="cursor: pointer;">
+                <img src="images/product-pin-green-nursing-student.jpg">
+                <h4>CHAS Green Nursing Student Pin</h4>
+                <p>₱25</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="col-4" onclick="location.href='product-detail-Pins-pink-dedicated-to-care.html'" style="cursor: pointer;">
+                <img src="images/product-pin-pink-dedicated-to-care.jpg">
+                <h4>CHAS Pink Dedicated to Care Pin </h4>
+                <p>₱25</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="page-btn">
+            <a href="products.html"><span>1</span></a>
+            <a href="products-2.html"><span>2</span></a>
+            <a href="products-3.html"><span>3</span></a>
+            <a href="products-4.html"><span>4</span></a>
+            
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p>Our Purpose Is To Creatively Craft and Deliver Exclusive CHAS Merchandise That Embodies Pride, Quality, and Tradition.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const products = document.querySelectorAll(".col-4");
+            products.forEach(product => {
+                product.addEventListener("click", function () {
+                    const url = this.getAttribute("data-href");
+                    if (url) {
+                        window.location.href = url;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

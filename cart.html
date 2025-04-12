@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Likhang CHAS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+    <script src="script.js"></script>
+    <style>
+        /* General Enhancements */
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .col-4 {
+            transition: transform 0.3s ease-in-out;
+        }
+        .col-4:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul li a:hover {
+            color: #31772a;
+            transition: 0.3s;
+        }
+
+        .page-btn span {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .page-btn span:hover {
+            background: #31772a;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .single-product .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 0px 0px;
+        }
+        .footer {
+    background-color: #000000; /* Adjust color if needed */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+} 
+
+        .checkout-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .checkout-btn {
+            display: inline-block;
+            background: #31772a;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .checkout-btn:hover {
+            background: #255b1e;
+        }
+        .checkout-container {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .checkout-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .left-side {
+        width: 45%;
+        text-align: left;
+    }
+
+    .right-side {
+        width: 45%;
+        text-align: right;
+    }
+
+    .submit-btn {
+        display: inline-block;
+        background: #31772a;
+        color: white;
+        padding: 10px 20px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+        background: #255b1e;
+    }
+
+    .gcash-img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    label {
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+    }
+
+    input[type="text"]:focus {
+        outline: none;
+        border-color: #31772a;
+    }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" width="150px" alt="Likhang CHAS Logo"src="images/logo.png" width="150px" onclick="location.href='home.html'" style="cursor: pointer;">  
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                   <!--   <li><a href="#">Contact</a></li>
+                        <li><a href="#">Account</a></li>-->
+                </ul>
+            </nav>
+            <img src="images/cart.png" width="30px" height="30px" alt="Cart">
+        </div>
+    </div>
+
+    <!-- START -->
+<div class="small-container cart-page"> 
+
+    <table>
+        <tr>
+        <th>Product</th>
+        <th>Size</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+        </tr>
+        <tr> 
+            <td><div class="cart-info">
+                <img src=>
+                <div>
+                    <p> Red Printed Tshirt</p>
+                    <small>150.00</small>
+                    <br>
+                    <a href="">Remove</a>
+                </div>
+            </div></td>
+            <td><input type="number" value="1"> </td>
+            <td>150.00</td>
+        </tr>
+    </table>
+
+    <h3>Total: <span id="total-price">₱0</span></h3>
+
+    
+</div>
+
+<div class="checkout-container">
+    <h2>Checkout</h2>
+    <p>Total Amount: <span id="checkout-total-price">₱0</span></p>
+    <!-- Combined Checkout Button -->
+    <button class="checkout-btn" onclick="sendToGoogleSheet()">Proceed to Checkout</button>
+</div>
+
+<div class="checkout-container">
+    <h2>Payments</h2>
+
+    <div class="checkout-wrapper">
+        <!-- LEFT SIDE: Reference Input -->
+        <div class="left-side">
+            <label for="reference-number"><strong>Enter Payment Reference Number:</strong></label>
+            <input type="text" id="reference-number" placeholder="Reference Number" />
+        </div>
+
+        <!-- RIGHT SIDE: GCash Image -->
+        <div class="right-side">
+            <img src="images/gcash.png" alt="GCash Payment" class="gcash-img" />
+        </div>
+    </div>
+</div>
+
+
+    <!-- JavaScript for Product Gallery -->
+    <script>
+    // Function to toggle policy details
+    function togglePolicy(policyId) {
+        var content = document.getElementById(policyId);
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null; // Collapse
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px"; // Expand
+        }
+    }
+
+    // Product image gallery functionality
+    var ProductImg = document.getElementById("ProductImg");
+    var SmallImg = document.getElementsByClassName("small-img");
+
+    for (let i = 0; i < SmallImg.length; i++) {
+        SmallImg[i].onclick = function () {
+            ProductImg.src = SmallImg[i].src;
+        };
+    }
+
+    // Ensure total price updates on page load & cart items are loaded
+    document.addEventListener("DOMContentLoaded", function () {
+        updateTotalPrice();
+        loadCartItems();
+    });
+
+    /** 
+     * Function to update total price across pages (Cart & Checkout) 
+     */
+    function updateTotalPrice() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let totalPrice = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+        let checkoutTotalPriceElement = document.getElementById("checkout-total-price");
+        if (checkoutTotalPriceElement) {
+            checkoutTotalPriceElement.innerText = `₱${totalPrice.toFixed(2)}`;
+        }
+    }
+
+    /** 
+     * Function to load cart items into the cart table
+     */
+    function loadCartItems() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let cartTable = document.querySelector("table");
+        let totalPriceElement = document.getElementById("total-price");
+
+        if (!cartTable) return; // Prevent error if no cart table exists
+
+        if (cart.length === 0) {
+            cartTable.innerHTML = "<tr><td colspan='5'>Your cart is empty.</td></tr>";
+            if (totalPriceElement) totalPriceElement.innerText = "₱0";
+            return;
+        }
+
+        let totalPrice = 0;
+        let cartHTML = `
+            <tr>
+                <th>Product</th>
+                <th>Size</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th>Action</th>
+            </tr>`;
+
+        cart.forEach((item, index) => {
+            let subtotal = item.price * item.quantity;
+            totalPrice += subtotal;
+
+            cartHTML += `
+            <tr>
+                <td>${item.name}</td>
+                <td>${item.size || "N/A"}</td>
+                <td><input type="number" value="${item.quantity}" min="1" data-index="${index}" class="cart-quantity"></td>
+                <td>₱${subtotal.toFixed(2)}</td>
+                <td><button class="remove-item" data-index="${index}">Remove</button></td>
+            </tr>`;
+        });
+
+        cartTable.innerHTML = cartHTML;
+        if (totalPriceElement) totalPriceElement.innerText = `₱${totalPrice.toFixed(2)}`;
+
+        // Attach event listeners for quantity updates and removal
+        document.querySelectorAll(".cart-quantity").forEach(input => {
+            input.addEventListener("change", function () {
+                let index = this.getAttribute("data-index");
+                let newQuantity = parseInt(this.value);
+
+                if (newQuantity <= 0) {
+                    newQuantity = 1;
+                    this.value = 1;
+                }
+
+                cart[index].quantity = newQuantity;
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateTotalPrice();
+                loadCartItems();
+            });
+        });
+
+        document.querySelectorAll(".remove-item").forEach(button => {
+            button.addEventListener("click", function () {
+                let index = this.getAttribute("data-index");
+                cart.splice(index, 1);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateTotalPrice();
+                loadCartItems();
+            });
+        });
+    }
+
+
+    function sendToGoogleSheet() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let referenceNumber = document.getElementById("reference-number").value;
+
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    if (!referenceNumber) {
+        alert("Please enter a reference number.");
+        return;
+    }
+
+    let orderData = {
+        items: [...cart, {referenceNumber: referenceNumber}], /*This is an easter egg*/
+        referenceNumber: referenceNumber
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbxBD_MntcbTxj6zu5lo9C2GOURk-bXwPBBHxjmuQG_aN-N0dWjN4QaxpoOeafojkfAnMw/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(orderData)
+    })
+    .then(() => {
+        alert("Order successfully submitted!");
+        localStorage.removeItem("cart");
+        window.location.href = "thankyou.html";
+    })
+    .catch(error => {
+        console.error("Fetch error:", error);
+        alert("Error sending order. Please try again.");
+    });
+}
+    /** 
+     * Add to Cart Function (Product Page) 
+     */
+    document.addEventListener("DOMContentLoaded", function () {
+        const addToCartBtn = document.querySelector(".btn");
+        if (addToCartBtn) {
+            addToCartBtn.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                let productName = document.querySelector("h1").innerText;
+                let productPrice = parseFloat(document.querySelector("h4").innerText.replace("₱", ""));
+                let productQuantity = parseInt(document.querySelector("input[type='number']").value);
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+                let existingItem = cart.find(item => item.name === productName);
+                if (existingItem) {
+                    existingItem.quantity += productQuantity;
+                } else {
+                    cart.push({ name: productName, price: productPrice, quantity: productQuantity });
+                }
+
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateTotalPrice();
+                alert("Item added to cart!");
+            });
+        }
+    });
+</script>
+
+        
+    
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p>Our Purpose Is To Creatively Craft and Deliver Exclusive CHAS Merchandise That Embodies Pride, Quality, and Tradition.</p>
+        </div>
+    </div>
+</body>
+</html>
